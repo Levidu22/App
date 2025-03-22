@@ -15,7 +15,7 @@ public enum Role {
     We typically use ALL CAPS to declare constants here
      */
 
-    CUSTOMER,
+    USER,
     ADMIN
 
 }

@@ -57,6 +57,7 @@ public class UserController {
         System.out.println("Enter an email: ");
         String email = scan.nextLine();
 
+
         // Validate the username fits our security metrics
         // TODO tweak logic as needed
         while (!userService.validateemail(email) || !userService.isemailAvailable(email)){

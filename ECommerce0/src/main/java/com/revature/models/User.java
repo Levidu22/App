@@ -28,7 +28,7 @@ public class User implements Comparable<User>{
         this.password = password;
 
         // We don't want to take in userId or role because we want these to be set to a default value
-        this.role = Role.CUSTOMER;
+        this.role = Role.USER;
         // UserId should be unique across all users and every user needs one
         this.userId = userIdCounter;
         userIdCounter++;

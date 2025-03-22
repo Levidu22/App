@@ -35,14 +35,19 @@ public class Main {
     public static void main(String[] args) {
 
         // Define some variables and make instances of our controllers, services and daos
-        UserDAO userDAO2 = new UserDAOImpl();
-        for(User u: userDAO2.getAll()){
-            System.out.println(u);
-        }
-
-        UserDAO userDAO = new OldUserDAOImpl();
-        UserService userService = new UserService(userDAO);
+        UserDAO userDAO = new UserDAOImpl();
+   //     for(User u: userDAO2.getAll()){
+    //        System.out.println(u);
+     //   }
         Scanner scan = new Scanner(System.in);
+
+    //    System.out.println("enter an email: ");
+      //  String emailEntered = scan.nextLine();
+       // System.out.println(userDAO2.getUserByemail(emailEntered));
+
+  //
+        UserService userService = new UserService(userDAO);
+
 
         UserController userController = new UserController(userService, scan);
 
@@ -89,7 +94,7 @@ public class Main {
                 // This means we're logged in so we'll have application logic here
                 // There isn't a lot of logic we can do right now. Here the Customers cannot do anything but the
                 // admin should be able to view all users
-                if (loggedInUser.getRole() == Role.CUSTOMER){
+                if (loggedInUser.getRole() == Role.USER){
                     System.out.println("Thanks for signing in, there is no current Customer functionality. Logging out!");
                     loggedInUser = null;
                 } else{
