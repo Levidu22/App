@@ -54,18 +54,18 @@ public class UserController {
         System.out.println("What is your last name?");
         String lastName = scan.nextLine();
         // Username
-        System.out.println("Enter a Username: ");
-        String username = scan.nextLine();
+        System.out.println("Enter an email: ");
+        String email = scan.nextLine();
 
         // Validate the username fits our security metrics
         // TODO tweak logic as needed
-        while (!userService.validateUsername(username) || !userService.isUsernameAvailable(username)){
-            if (!userService.validateUsername(username)){
-                System.out.println("Username must be at least 8 characters! Please enter a new Username: ");
-                username = scan.nextLine();
+        while (!userService.validateemail(email) || !userService.isemailAvailable(email)){
+            if (!userService.validateemail(email)){
+                System.out.println("Username must be at least 8 characters! Please enter a new email: ");
+                email = scan.nextLine();
             } else {
-                System.out.println("Username is already taken! Please enter a new Username: ");
-                username = scan.nextLine();
+                System.out.println("Username is already taken! Please enter a new email: ");
+                email = scan.nextLine();
             }
         }
 
@@ -81,22 +81,22 @@ public class UserController {
 
         // At this point the username and passwords should valid and available
         System.out.println("You have successfully registered");
-        return userService.registerNewUser(firstName, lastName, username, password);
+        return userService.registerNewUser(firstName, lastName, email, password);
     }
 
     // TODO Login a User
     public User loginUser(){
         // Take in a username
-        System.out.println("Please enter a username:");
-        String username = scan.nextLine();
+        System.out.println("Please enter a email:");
+        String email = scan.nextLine();
         // Take in a password
         System.out.println("Please enter a password:");
         String password = scan.nextLine();
 
         // Attempt to login the user
-        User returnUser = userService.loginUser(username, password);
+        User returnUser = userService.loginUser(email, password);
         if (returnUser == null){
-            System.out.println("Username or password incorrect!");
+            System.out.println("email or password incorrect!");
             return null;
         }
 

@@ -40,5 +40,5 @@ public interface UserDAO extends GeneralDAO<User>{
 //    boolean deleteUserById(int userId);
 
     // When we try to login or register we need to get a user by their username to validate info
-    User getUserByUsername(String username);
+    User getUserByemail(String email);
 }

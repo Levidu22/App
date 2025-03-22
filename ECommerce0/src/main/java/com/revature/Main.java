@@ -33,6 +33,7 @@ public class Main {
      */
 
     public static void main(String[] args) {
+
         // Define some variables and make instances of our controllers, services and daos
         UserDAO userDAO2 = new UserDAOImpl();
         for(User u: userDAO2.getAll()){

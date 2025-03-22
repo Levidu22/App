@@ -10,7 +10,7 @@ public class User implements Comparable<User>{
 
     private String lastName;
 
-    private String username;
+    private String email;
 
     private String password;
 
@@ -21,10 +21,10 @@ public class User implements Comparable<User>{
     // Constructors
     // By default there is a no-args constructor in this class let's add a constructor for every parameter
     // except userId and role
-    public User(String firstName, String lastName, String username, String password){
+    public User(String firstName, String lastName, String email, String password){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
+        this.email = email;
         this.password = password;
 
         // We don't want to take in userId or role because we want these to be set to a default value
@@ -63,12 +63,12 @@ public class User implements Comparable<User>{
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getemail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setemail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -96,7 +96,7 @@ public class User implements Comparable<User>{
                 "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
                 ", role=" + role +
                 '}';
     }

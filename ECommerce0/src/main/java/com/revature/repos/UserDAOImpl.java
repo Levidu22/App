@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UserDAOImpl implements UserDAO{
     @Override
-    public User getUserByUsername(String username) {
+    public User getUserByemail(String email) {
         return null;
     }
 
@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO{
                 u.setUserId(rs.getInt("user_id"));
                 u.setFirstName(rs.getString("first_name"));
                 u.setLastName(rs.getString("last_name"));
-                u.setUsername(rs.getString("email"));
+                u.setemail(rs.getString("email"));
                 u.setRole(Role.valueOf(rs.getString("roles")));
                 allUsers.add(u);
 

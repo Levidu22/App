@@ -23,17 +23,17 @@ public class UserService {
     }
 
     // TODO Validate Username Security
-    public boolean validateUsername(String username){
+    public boolean validateemail(String email){
         // Any sort of criteria we have for our username can be evaluated here
         // Length >= 8 characters
 
-        return username.length() >= 8;
+        return email.length() >= 8;
     }
 
     // TODO Validate Username availability
     // If a username is already taken we want to return false (the username is not available)
-    public boolean isUsernameAvailable(String username){
-        return userDAO.getUserByUsername(username) == null;
+    public boolean isemailAvailable(String email){
+        return userDAO.getUserByemail(email) == null;
     }
 
     // TODO Validate Password Security
@@ -63,10 +63,10 @@ public class UserService {
     }
 
     // TODO Register
-    public User registerNewUser(String firstName, String lastName, String username, String password){
+    public User registerNewUser(String firstName, String lastName, String email, String password){
         // NOTE: We expect our validation methods to be called BEFORE this method is called in the controller layer
         // Create a new user object
-        User userToBeSaved = new User(firstName, lastName, username, password);
+        User userToBeSaved = new User(firstName, lastName, email, password);
 
         // Save the user to the "database"
         return userDAO.create(userToBeSaved);
@@ -74,9 +74,9 @@ public class UserService {
     }
 
     // TODO Login
-    public User loginUser(String username, String password){
+    public User loginUser(String email, String password){
         // Get the user by their username
-        User returnedUser = userDAO.getUserByUsername(username);
+        User returnedUser = userDAO.getUserByemail(email);
         if (returnedUser == null){
             return null;
         }

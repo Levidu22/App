@@ -32,10 +32,10 @@ public class OldUserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getUserByUsername(String username) {
+    public User getUserByemail(String email) {
 
         for (User u: allUsers){
-            if (u.getUsername().equals(username)){
+            if (u.getemail().equals(email)){
                 return u;
             }
         }
@@ -81,7 +81,7 @@ public class OldUserDAOImpl implements UserDAO {
                 // We are updating the same object if we are in here
                 u.setFirstName(obj.getFirstName());
                 u.setLastName(obj.getLastName());
-                u.setUsername(obj.getUsername());
+                u.setemail(obj.getemail());
                 u.setPassword(obj.getPassword());
                 u.setRole(obj.getRole());
             }
